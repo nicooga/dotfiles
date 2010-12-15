@@ -1,0 +1,38 @@
+[core]
+	excludesfile = /home/emmanuel/.gitignore
+	pager = most +s +'/---'
+	editor = gvim --nofork
+
+[color]
+	diff = auto
+	branch = auto
+	status = auto
+	ui = auto
+	log = auto
+
+[merge]
+	tool = meld
+
+[alias]
+	up = pull origin
+	st = status -sb
+	di = diff
+	co = checkout
+	ci = commit
+	br = branch
+	sta = stash
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
+[user]
+	name = Emmanuel Oga
+	email = EmmanuelOga@gmail.com
+
+[diff "ruby"]
+	funcname = ^ *\\(\\(class\\|module\\|def\\) .*\\)
+
+[github]
+	user = EmmanuelOga
+	token = FILLUP
+
+[diff]
+	tool = meld

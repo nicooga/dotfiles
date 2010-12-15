@@ -1,0 +1,57 @@
+# vim:ft=sh
+
+set -o vi
+
+TZ='America/Argentina/Buenos_Aires'; export TZ
+export LANG="en_EN.utf8"
+export LC_ALL="en_US.utf8"
+
+# export RUBYOPT='-w'
+export ANT_HOME=/usr/share/java/apache-ant/
+export JAVA_HOME=/opt/java
+export MANPAGER="most"
+
+PATH=/opt/java/bin:/usr/share/java/apache-ant/bin:/usr/local/bin:$PATH
+
+if [ -d ~/dotfiles/bin ] ;  then PATH=~/dotfiles/bin:"${PATH}" ; fi
+if [ -d ~/.rvm/bin ] ;      then PATH=~/.rvm/bin:"${PATH}" ; fi
+if [ -d ~/.luarocks/bin ] ; then PATH=~/.luarocks/bin:"${PATH}" ; fi
+
+export PATH
+
+# ruby/rails aliases
+alias cdgems='cd `gem env gemdir`/gems'
+
+alias bx="bundle exec"
+alias bxr="bundle exec rails"
+alias sps="RACK_ENV=test bundle exec rake spec"
+alias sp="RACK_ENV=test ruby -I spec/"
+alias rrs="reep rake spec" # run spec tasks using ree and special GC settings on the ENV variables
+
+# misc. command line shortcuts
+alias ..="cd .."
+alias cd..="cd .."
+
+alias t="tree -L 1 -C -h"
+alias la='ls -la --color=auto -F'
+alias ll='ls --group-directories-first --time-style=+"%Y-%m-%d %H:%M" --color=auto -F -l'
+alias ls='ls --group-directories-first --time-style=+"%Y-%m-%d %H:%M" --color=auto -F'
+
+alias grep='grep --color=tty -d skip'
+alias ifind='ack -a -f | grep -i'
+alias xmv='escapepath | xargs -I {} mv {}'
+
+alias vcr="ffmpeg -f x11grab -s wxga -r 25 -i :0.0 -sameq /tmp/out.mpg &"
+alias rhino='java -jar /usr/share/java/js.jar'
+alias win='VBoxManage startvm Windoze'
+
+if [   -f /etc/bash_completion ];                          then source /etc/bash_completion ; fi
+if [[ -s ~/dotfiles/completion/rake_and_cap.sh ]] ;        then source ~/dotfiles/completion/rake_and_cap.sh ; fi
+
+if [[ -s ~/dotfiles/bash/dirb.sh ]] ;                      then source ~/dotfiles/bash/dirb.sh ; fi
+if [[ -s ~/dotfiles/bash/bash_prompt.sh ]] ;               then source ~/dotfiles/bash/bash_prompt.sh ; fi
+if [[ -s ~/dotfiles/bash/daemons.sh ]] ;                   then source ~/dotfiles/bash/daemons.sh ; fi
+
+# rvm
+if [[ -s ~/.rvm/scripts/rvm ]] ;                  then source ~/.rvm/scripts/rvm ; fi
+if [[ -r $rvm_path/scripts/completion ]] ;        then source $rvm_path/scripts/completion ; fi

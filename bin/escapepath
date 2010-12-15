@@ -1,0 +1,7 @@
+#!/usr/bin/ruby
+
+require 'shellwords'
+
+while not STDIN.eof?
+  puts(STDIN.gets.chomp.shellescape)
+end

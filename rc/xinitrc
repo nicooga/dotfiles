@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# Turn off bell sound
+/usr/bin/env xset b off
+
+# make sure resources are loaded.
+xrdb .Xdefaults
+
+# keyboard config.
+setxkbmap -layout en
+xmodmap /home/emmanuel/.Xmodmap
+
+# Allow transparency
+xcompmgr &
+
+# Start the GnuPG agent and enable OpenSSH agent emulation
+gnupginf="${HOME}/.gnupg/gpg-agent.info"
+
+if ( pgrep -u "${USER}" gpg-agent ); then
+  eval `cat $gnupginf`
+  eval `cut -d= -f1 $gnupginf | xargs echo export`
+else
+  eval `gpg-agent --enable-ssh-support --daemon`
+fi
+
+# popup gnome keyring dialog asking for credentials when needed.
+eval `gnome-keyring-daemon`
+
+# password manager
+fpm2 -t &
+
+# Some java application do not get focus or have strange behaviours under no standard Window Managers like Awesome.
+export AWT_TOOLKIT="MToolkit"
+
+# wmname preserves antialiasing while fixing the issue above.
+# ~/dotfiles/bin/wmname LG3D_WM
+
+# set wallpaper
+feh --bg-center /home/emmanuel/Wallpaper/frankfurt-main-hdr-small.jpg
+
+# Joystick to keys
+# qjoypad --update Default &
+
+ck-launch-session &
+
+# network on tray
+wicd-gtk &
+
+exec awesome

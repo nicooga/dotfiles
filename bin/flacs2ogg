@@ -1,0 +1,43 @@
+require 'rubygems'
+require 'shellwords'
+require 'fileutils'
+require 'active_support'
+require 'progressbar'
+
+def encode(file)
+  ofile = file.gsub(/flac$/i, "ogg")
+
+  while File.file?("ogg/#{ ofile }")
+    n = 0
+    ofile.gsub(/ogg$/, "#{ n += 1 }.ogg")
+  end
+
+  i = Time.now
+  system("flac -dc #{ file.shellescape } | oggenc -q3 --raw -o ogg/#{ ofile.shellescape } --quiet -")
+  f = Time.now
+  b = File.size(file).to_f
+  a = File.size("ogg/#{ofile}").to_f rescue 0
+  puts "  -- File: #{ file}. Before: #{b.kilobytes}. After: #{a.kilobytes}. Compression: #{ a * 100.0 / b }%. Time: #{ f - i} secs (#{ a / 1024 / (f - i)}Kb / sec)."
+rescue => e
+  puts "ERROR: #{ e }"
+end
+
+all = Dir["*flac"].to_a
+groups = all.in_groups_of(all.length / 4).map(&:compact)
+threads = []
+
+groups.each_with_index do |group, i|
+  threads << Thread.new do
+
+    pb = ProgressBar.new("Group #{ i + 1} / #{ groups.length }", group.length)
+
+    group.each_with_index do |file, j|
+      encode(file)
+      pb.inc
+    end
+
+    pb.finish
+  end
+end
+
+threads.each(&:join)

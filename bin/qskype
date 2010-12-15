@@ -1,0 +1,3 @@
+#! /bin/bash
+export QT_PLUGIN_PATH=$QT_PLUGIN_PATH:/opt/lib32/usr/lib/qt/plugins
+/usr/bin/skype

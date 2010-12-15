@@ -1,0 +1,4 @@
+#!/bin/sh
+xset s off
+/usr/bin/env vlc $@
+xset s on

@@ -1,0 +1,11 @@
+#!/usr/bin/ruby
+
+Dir["*"].each do |dir|
+
+  if File.directory?(dir) && File.directory?(File.join(dir, ".git"))
+    puts "\nUpdating #{ dir }"
+    system("cd #{dir}; git checkout master; git stash; git pull")
+    puts "-" * 80 + "\n"
+  end
+
+end

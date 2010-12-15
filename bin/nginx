@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+sudo killall nginx
+sleep 2
+ps aux | grep nginx
+
+sudo /home/emmanuel/apps/nginx/sbin/nginx

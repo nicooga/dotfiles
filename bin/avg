@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+nums = STDIN.read.split
+
+puts(nums.inject(0) { |n, v| n+= v.to_f } / nums.length)

@@ -1,0 +1,66 @@
+// vim:nolist
+
+Xcursor.theme:	Obsidian
+
+Xft.antialias:	1
+Xft.hintstyle:	hintfull
+Xft.dpi:	96
+Xft.hinting:	1
+Xft.rgba:	rgb
+
+URxvt.keysym.C-Delete:	perl:matcher
+URxvt.keysym.M-u:	perl:mark-yank-urls:activate_mark_mode
+URxvt.matcher.pattern.1:\\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+URxvt.matcher.pattern.2:\\B(/\\S+?):(\\d+)(?=:|$)
+URxvt.matcher.launcher.2:gvim --remote +$2 $1
+URxvt.matcher.button:	1
+URxvt.cursorColor:	green
+URxvt.boldFont:	        xft:Bitstream Vera Sans Mono:bold:pixelsize=14:antialias=true:hinting=true
+URxvt.urgentOnBell:	true
+URxvt.perl-ext:	        default,selection,mark-yank-urls,selection-popup,matcher,-option-popup
+URxvt.underlineURLs:	true
+URxvt*transparent:	true
+URxvt.buffered:	true
+URxvt.underlineColor:	yellow
+URxvt.scrollBar:	0
+URxvt.background:	black
+URxvt*shading:	8
+URxvt.urlLauncher:	/usr/bin/firefox
+URxvt.saveLines:	8192
+URxvt.font:     	xft:Bitstream Vera Sans Mono:pixelsize=14:antialias=true:hinting=true
+URxvt.foreground:	white
+URxvt*inheritPixmap:	true
+
+xterm*scrollTtyOutput:	false
+xterm*multiScroll:	true
+xterm*loginShell:	true
+xterm*dynamicColors:	true
+xterm*toolBar:          false
+xterm*eightBitInput:	true
+xterm*scrollBar:	false
+xterm*faceName: 	Bitstream Vera Sans Mono:pixelsize=10
+xterm*jumpScroll:	true
+xterm*saveLines:	32767
+xterm*scrollTtyKeypress:true
+
+xrenoise.use_xcursors:	1
+xrenoise.display:	:0
+xrenoise.display_resource:0x00,0x02,0x7F,0x00,0x30,0x41,0xF8,0x09
+xrenoise.executable_path:/usr/bin/renoise
+
+*color11:	#fce94f
+*color9:	#ef2929
+*color13:	#ad7fa8
+*color7:	#d3d7cf
+*color6:	#0b939b
+*color2:	#4e9a06
+*color0:	#2e3436
+*color4:	#3465A4
+*color10:	#8ae234
+*color8:	#555753
+*color12:	#729fcf
+*color14:	#008bf6
+*color3:	#c4a000
+*color1:	#cc0000
+*color5:	#75507b
+*color15:	#eeeeec
