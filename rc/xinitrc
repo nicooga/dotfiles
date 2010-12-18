@@ -46,4 +46,7 @@ ck-launch-session &
 # network on tray
 wicd-gtk &
 
+# Screensaver!
+xscreensaver -nosplash & # Call xscreensaver-command -activate , etc..
+
 exec awesome
