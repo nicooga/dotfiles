@@ -9,11 +9,23 @@ def sources_and_destinations
   end
 end
 
+NO_COL = "\e[1;0m"
+RED    = "\e[1;31m"
+GREEN  = "\e[1;32m"
+
+def file_compare(src, dst)
+  if File.identical?(src, dst)
+    "#{GREEN}[Installed]"
+  else
+    "#{RED}[Not Installed]"
+  end
+end
+
 desc "list existing dotfiles files"
 task :list do
-  sources_and_destinations.each do |src, dst|
-    puts("Exist: #{ File.file?(dst) ? "Y" : "N" }: #{dst}")
-  end
+  list = sources_and_destinations.map { |src, dst| [file_compare(src, dst), dst] }
+  just = list.map { |_, path| path.length }.max + 1
+  list.sort.each { |item| puts("" << NO_COL << item.last.ljust(just) << item.first) }
 end
 
 desc "remove old dotfiles files"
@@ -29,3 +41,5 @@ task :install do
     ln_s(src, dst) unless File.exist?(dst)
   end
 end
+
+task :default => :list
