@@ -16,6 +16,7 @@ PATH=/opt/java/bin:/usr/share/java/apache-ant/bin:/usr/local/bin:$PATH
 if [ -d ~/dotfiles/bin ] ;  then PATH=~/dotfiles/bin:"${PATH}" ; fi
 if [ -d ~/.rvm/bin ] ;      then PATH=~/.rvm/bin:"${PATH}" ; fi
 if [ -d ~/.luarocks/bin ] ; then PATH=~/.luarocks/bin:"${PATH}" ; fi
+if [ -d /usr/lib/perl5/vendor_perl/bin/ ] ; then PATH=/usr/lib/perl5/vendor_perl/bin/:"${PATH}" ; fi
 
 export PATH
 
