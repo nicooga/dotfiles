@@ -1,6 +1,7 @@
 # vim:ft=sh
 
-set -o vi
+export INPUTRC=~/.inputrc # make sure the local input rc is loaded
+set -o vi                 # and, set readline to vi mode
 
 TZ='America/Argentina/Buenos_Aires'; export TZ
 export LANG="en_EN.utf8"
