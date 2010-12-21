@@ -19,15 +19,17 @@ URxvt.boldFont:	        xft:Bitstream Vera Sans Mono:bold:pixelsize=14:antialias
 URxvt.urgentOnBell:	true
 URxvt.perl-ext:	        default,selection,mark-yank-urls,selection-popup,matcher,-option-popup
 URxvt.underlineURLs:	true
-URxvt*transparent:	true
 URxvt.buffered:	true
 URxvt.underlineColor:	yellow
 URxvt.scrollBar:	0
-URxvt*shading:	8
 URxvt.urlLauncher:	/usr/bin/firefox
 URxvt.saveLines:	8192
 URxvt.font:     	xft:Bitstream Vera Sans Mono:pixelsize=14:antialias=true:hinting=true
-URxvt*inheritPixmap:	true
+
+URxvt*transparent:      true
+URxvt*shading:          8
+// URxvt*tint:          colour
+URxvt*inheritPixmap:    true
 
 xterm*scrollTtyOutput:	false
 xterm*multiScroll:	true
@@ -42,23 +44,23 @@ xterm*saveLines:	32767
 xterm*scrollTtyKeypress:true
 
 !XDEFAULTS-THEME
-!Theme Eleven
-*background: #333333
-*foreground: #ffffff
-*color0:     #333333
-*color8:     #333333
-*color1:     #ffa0a0
-*color9:     #ffa0a0
-*color2:     #98fb98
-*color10:    #9acd32
-*color3:     #f0e68c
-*color11:    #f0e68c
-*color4:     #87ceeb
-*color12:    #87ceeb
-*color5:     #ffa0a0
-*color13:    #ffa0a0
-*color6:     #87ceeb
-*color14:    #87ceeb
-*color7:     #ffffff
+!Theme Twenty-One
+*background: #1a1a1a
+*foreground: #aaaaaa
+*color0:     #000000
+*color8:     #666666
+*color1:     #9e1828
+*color9:     #bc5766
+*color2:     #008800
+*color10:    #61a171
+*color3:     #d2bb4b
+*color11:    #e7db52
+*color4:     #414171
+*color12:    #5085af
+*color5:     #963c59
+*color13:    #a97a99
+*color6:     #418179
+*color14:    #6ba4a4
+*color7:     #bebebe
 *color15:    #ffffff
 !XDEFAULTS-THEME

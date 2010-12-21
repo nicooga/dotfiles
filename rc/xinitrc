@@ -11,7 +11,7 @@ setxkbmap -layout en
 xmodmap /home/emmanuel/.Xmodmap
 
 # Allow transparency
-xcompmgr &
+# xcompmgr &
 
 # Start the GnuPG agent and enable OpenSSH agent emulation
 gnupginf="${HOME}/.gnupg/gpg-agent.info"
@@ -36,7 +36,7 @@ export AWT_TOOLKIT="MToolkit"
 # ~/dotfiles/bin/wmname LG3D_WM
 
 # set wallpaper
-feh --bg-center /home/emmanuel/Wallpaper/frankfurt-main-hdr-small.jpg
+awsetbg ~/Wallpaper/73838.jpg
 
 # Joystick to keys
 # qjoypad --update Default &
