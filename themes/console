@@ -15,9 +15,7 @@ THEMES.each do |theme|
   File.open(CONFIG_PATH, "w") { |f| f << result }
 
   system("xrdb #{CONFIG_PATH}; urxvt")
-  system("termcolors")
-  puts(theme.split("\n").first)
-  print("Choose this one? [Y/N/Q]: ")
+  print("Choose #{theme.split("\n").first}? [Y/N/Q]: ")
   $input = STDIN.gets()
   break if $input =~ /y|q/i
 end
