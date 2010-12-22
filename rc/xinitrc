@@ -49,4 +49,7 @@ wicd-gtk &
 # Screensaver!
 xscreensaver -nosplash & # Call xscreensaver-command -activate , etc..
 
+# allow me to see shadows please.
+xgamma -gamma 0.9
+
 exec awesome

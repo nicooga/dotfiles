@@ -27,7 +27,7 @@ URxvt.saveLines:	8192
 URxvt.font:     	xft:Bitstream Vera Sans Mono:pixelsize=14:antialias=true:hinting=true
 
 URxvt*transparent:      true
-URxvt*shading:          8
+URxvt*shading:          16
 // URxvt*tint:          colour
 URxvt*inheritPixmap:    true
 
@@ -44,23 +44,23 @@ xterm*saveLines:	32767
 xterm*scrollTtyKeypress:true
 
 !XDEFAULTS-THEME
-!Theme Twenty-One
-*background: #1a1a1a
-*foreground: #aaaaaa
-*color0:     #000000
-*color8:     #666666
-*color1:     #9e1828
-*color9:     #bc5766
-*color2:     #008800
-*color10:    #61a171
-*color3:     #d2bb4b
-*color11:    #e7db52
-*color4:     #414171
-*color12:    #5085af
-*color5:     #963c59
-*color13:    #a97a99
-*color6:     #418179
-*color14:    #6ba4a4
-*color7:     #bebebe
+!Theme Eleven
+*background: #333333
+*foreground: #ffffff
+*color0:     #333333
+*color8:     #444444
+*color1:     #ff0000
+*color9:     #ff5050
+*color2:     #98fb98
+*color10:    #9acd32
+*color3:     #f0e68c
+*color11:    #f0e68c
+*color4:     #87aebb
+*color12:    #87ceeb
+*color5:     #ff0000
+*color13:    #ff5050
+*color6:     #87aebb
+*color14:    #a7deff
+*color7:     #bbbbbb
 *color15:    #ffffff
 !XDEFAULTS-THEME
