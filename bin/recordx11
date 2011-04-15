@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+ffmpeg -f x11grab -s 1280x800 -r 50 -i :0.0 -f webm /tmp/out.webm
