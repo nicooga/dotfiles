@@ -10,6 +10,9 @@ xrdb .Xdefaults
 setxkbmap -layout en
 xmodmap /home/emmanuel/.Xmodmap
 
+# pinyin
+ibus-daemon &
+
 # Allow transparency
 # xcompmgr &
 
@@ -41,6 +44,8 @@ awsetbg ~/Wallpaper/73838.jpg
 # Joystick to keys
 # qjoypad --update Default &
 
+vattery &
+
 ck-launch-session &
 
 # network on tray
@@ -50,6 +55,6 @@ wicd-gtk &
 xscreensaver -nosplash & # Call xscreensaver-command -activate , etc..
 
 # allow me to see shadows please.
-xgamma -gamma 0.9
+xgamma -gamma 0.85
 
 exec awesome

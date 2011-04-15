@@ -22,6 +22,8 @@
 	br = branch
 	sta = stash
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	addp = add -p
+	addi = add -i
 
 [user]
 	name = Emmanuel Oga

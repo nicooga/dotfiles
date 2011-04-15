@@ -2,6 +2,7 @@
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWUPSTREAM="auto"
 
 __ruby_version() {
   # echo `ruby -v | sed -e "s/ (.*//g"`
