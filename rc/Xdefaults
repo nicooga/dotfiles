@@ -22,7 +22,7 @@ URxvt.underlineURLs:	true
 URxvt.buffered:	true
 URxvt.underlineColor:	yellow
 URxvt.scrollBar:	0
-URxvt.urlLauncher:	/usr/bin/firefox
+URxvt.urlLauncher:	/usr/bin/chromium
 URxvt.saveLines:	8192
 URxvt.font:     	xft:Bitstream Vera Sans Mono:pixelsize=14:antialias=true:hinting=true
 

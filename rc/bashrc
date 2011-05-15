@@ -3,17 +3,12 @@
 export INPUTRC=~/.inputrc # make sure the local input rc is loaded
 set -o vi                 # and, set readline to vi mode
 
-# intelligent input bus (chinese)
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-
 TZ='America/Argentina/Buenos_Aires'; export TZ
 export LANG="en_EN.utf8"
 export LC_ALL="en_US.utf8"
 
 # export RUBYOPT='-w'
-export MANPAGER="most"
+export MANPAGER="most -c"
 
 if [ -d ~/dotfiles/bin ] ;  then PATH=~/dotfiles/bin:"${PATH}" ; fi
 if [ -d ~/dotfiles/local/bin ] ;  then PATH=~/dotfiles/local/bin:"${PATH}" ; fi
@@ -21,36 +16,24 @@ if [ -d ~/.rvm/bin ] ;      then PATH=~/.rvm/bin:"${PATH}" ; fi
 if [ -d ~/.luarocks/bin ] ; then PATH=~/.luarocks/bin:"${PATH}" ; fi
 if [ -d /usr/lib/perl5/vendor_perl/bin/ ] ; then PATH=/usr/lib/perl5/vendor_perl/bin/:"${PATH}" ; fi
 
-export PATH
+export PATH=$PATH:/usr/local/bin:/usr/local/sbin
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
-export CDPATH=.:~/projects:~/broadspire:$(gem env gemdir)/gems
-
-# ruby/rails aliases
 alias cdgems='cd `gem env gemdir`/gems'
-function cdl { cd $1; ls;}
-
 alias bx="bundle exec"
 alias bxr="bundle exec rails"
-alias sps="RACK_ENV=test bundle exec rake spec"
-alias sp="RACK_ENV=test ruby -I spec/"
-alias rrs="reep rake spec" # run spec tasks using ree and special GC settings on the ENV variables
 alias rake="rake --trace"
-
-# misc. command line shortcuts
 alias ..="cd .."
 alias cd..="cd .."
-
-alias t="tree -L 1 -C -h"
-alias la='ls -la --color=auto -F'
-alias ll='ls --group-directories-first --time-style=+"%Y-%m-%d %H:%M" --color=auto -F -l'
+alias ll="tree -L 1 -C -h -a -F --dirsfirst -A"
+alias la='ls --group-directories-first --time-style=+"%Y-%m-%d %H:%M" --color=auto -F -la'
 alias ls='ls --group-directories-first --time-style=+"%Y-%m-%d %H:%M" --color=auto -F'
 alias exes='find -type f -executable'
-
 alias grep='grep --color=tty -d skip'
 alias ifind='ack -a -f | grep -i'
 alias xmv='escapepath | xargs -I {} mv {}'
 alias rhino='java -jar /usr/share/java/js.jar'
-
 alias srez="xrandr -s 0" # restore screen size to screen's best
 
 if [   -f /etc/bash_completion ];                          then source /etc/bash_completion ; fi
@@ -59,9 +42,7 @@ if [[ -s ~/dotfiles/completion/rake_and_cap.sh ]] ;        then source ~/dotfile
 if [[ -s ~/dotfiles/bash/dirb.sh ]] ;                      then source ~/dotfiles/bash/dirb.sh ; fi
 if [[ -s ~/dotfiles/bash/bash_prompt.sh ]] ;               then source ~/dotfiles/bash/bash_prompt.sh ; fi
 
-# using arch-daemon now. https://github.com/cassava/arch-daemon
-#if [[ -s ~/dotfiles/bash/daemons.sh ]] ;                   then source ~/dotfiles/bash/daemons.sh ; fi
-alias daemon="sudo daemon"
+alias rc="sudo rc"
 
 # rvm
 if [[ -s ~/.rvm/scripts/rvm ]] ;                  then source ~/.rvm/scripts/rvm ; fi

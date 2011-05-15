@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# pulse: start!
+start-pulseaudio-x11 &
+
 # Turn off bell sound
 /usr/bin/env xset b off
 
@@ -10,8 +13,11 @@ xrdb .Xdefaults
 setxkbmap -layout en
 xmodmap /home/emmanuel/.Xmodmap
 
-# pinyin
+# intelligent input bus (chinese)
 ibus-daemon &
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
 
 # Allow transparency
 # xcompmgr &
@@ -39,7 +45,7 @@ export AWT_TOOLKIT="MToolkit"
 # ~/dotfiles/bin/wmname LG3D_WM
 
 # set wallpaper
-awsetbg ~/Wallpaper/73838.jpg
+awsetbg ~/Wallpaper/green.jpg
 
 # Joystick to keys
 # qjoypad --update Default &
