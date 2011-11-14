@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# pulse: start!
-start-pulseaudio-x11 &
-
 # Turn off bell sound
 /usr/bin/env xset b off
 
@@ -13,11 +10,14 @@ xrdb .Xdefaults
 setxkbmap -layout en
 xmodmap /home/emmanuel/.Xmodmap
 
+# disable touchpad when typing.
+syndaemon -d
+
 # intelligent input bus (chinese)
-ibus-daemon &
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+# ibus-daemon &
+# export GTK_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+# export QT_IM_MODULE=ibus
 
 # Allow transparency
 # xcompmgr &
@@ -47,18 +47,12 @@ export AWT_TOOLKIT="MToolkit"
 # set wallpaper
 awsetbg ~/Wallpaper/green.jpg
 
-# Joystick to keys
-# qjoypad --update Default &
-
-vattery &
+ptbatterysystemtray &
 
 ck-launch-session &
 
 # network on tray
 wicd-gtk &
-
-# Screensaver!
-xscreensaver -nosplash & # Call xscreensaver-command -activate , etc..
 
 # allow me to see shadows please.
 xgamma -gamma 0.85

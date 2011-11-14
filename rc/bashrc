@@ -36,14 +36,30 @@ alias xmv='escapepath | xargs -I {} mv {}'
 alias rhino='java -jar /usr/share/java/js.jar'
 alias srez="xrandr -s 0" # restore screen size to screen's best
 
+alias gtodos='google docs edit "TODO" --editor "gvim --nofork"'
+alias gideas='google docs edit "IDEAS" --editor "gvim --nofork"'
+alias gnotes='google docs edit "NOTES" --editor "gvim --nofork"'
+
 if [   -f /etc/bash_completion ];                          then source /etc/bash_completion ; fi
 if [[ -s ~/dotfiles/completion/rake_and_cap.sh ]] ;        then source ~/dotfiles/completion/rake_and_cap.sh ; fi
 
 if [[ -s ~/dotfiles/bash/dirb.sh ]] ;                      then source ~/dotfiles/bash/dirb.sh ; fi
 if [[ -s ~/dotfiles/bash/bash_prompt.sh ]] ;               then source ~/dotfiles/bash/bash_prompt.sh ; fi
 
-alias rc="sudo rc"
+alias rc="sudo rc.d"
 
 # rvm
-if [[ -s ~/.rvm/scripts/rvm ]] ;                  then source ~/.rvm/scripts/rvm ; fi
-if [[ -r $rvm_path/scripts/completion ]] ;        then source $rvm_path/scripts/completion ; fi
+if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
+if [[ -r $rvm_path/scripts/completion ]] ; then source $rvm_path/scripts/completion ; fi
+
+# go
+if [[ -r /etc/profile.d/go.sh ]] ; then
+  source /etc/profile.d/go.sh ;
+  export PATH=$PATH:/opt/go/bin
+fi
+
+# ant
+if [[ -r /usr/share/java/apache-ant/bin ]] ; then
+  export PATH=$PATH:/usr/share/java/apache-ant/bin
+fi
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
