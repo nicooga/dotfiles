@@ -1,2 +1,2 @@
 #!/bin/bash
-exec /usr/bin/env nautilus --no-desktop --browser
+exec /usr/bin/env nautilus --no-desktop

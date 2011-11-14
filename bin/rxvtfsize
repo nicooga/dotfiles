@@ -1,0 +1,2 @@
+#!/bin/bash
+printf '\33]50;%s%d\007' "xft:Bitstream Vera Sans Mono:antialias=true:hinting=true:pixelsize=" $1

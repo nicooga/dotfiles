@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+cd /tmp
+google docs edit "TODO" --editor "gvim --nofork" &
+google docs edit "IDEAS" --editor "gvim --nofork" &
+google docs edit "NOTES" --editor "gvim --nofork" &

@@ -1,0 +1,6 @@
+#/usr/bin/env sh
+
+tidy --doctype "-\\!DOCTYPE\\ html" \
+     --new-blocklevel-tags 'article,header,footer,section,nav' \
+     --new-inline-tags 'video,audio,canvas,ruby,rt,rp' \
+     $@
