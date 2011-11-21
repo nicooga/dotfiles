@@ -20,13 +20,15 @@ export PATH=$PATH:/usr/local/bin:/usr/local/sbin
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
+alias reload='source ~/.bashrc'
 alias cdgems='cd `gem env gemdir`/gems'
 alias bx="bundle exec"
 alias bxr="bundle exec rails"
 alias rake="rake --trace"
 alias ..="cd .."
 alias cd..="cd .."
-alias ll="tree -L 1 -C -h -a -F --dirsfirst -A"
+alias l="tree -L 1 -C -h -F -p --dirsfirst -A"
+alias ll="tree -L 1 -C -h -a -F -p --dirsfirst -A"
 alias la='ls --group-directories-first --time-style=+"%Y-%m-%d %H:%M" --color=auto -F -la'
 alias ls='ls --group-directories-first --time-style=+"%Y-%m-%d %H:%M" --color=auto -F'
 alias exes='find -type f -executable'
