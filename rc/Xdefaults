@@ -47,20 +47,28 @@ xterm*scrollTtyKeypress:true
 !Theme Eleven
 *background: #333333
 *foreground: #ffffff
+
 *color0:     #333333
 *color8:     #944474
-*color1:     #ff0000
-*color9:     #ff5050
+
+*color1:     #ff5050
+*color9:     #ff0000
+
 *color2:     #98fb98
 *color10:    #9acd32
+
 *color3:     #f0e68c
 *color11:    #f0e68c
+
 *color4:     #87aebb
-*color12:    #87ceeb
-*color5:     #ff0000
-*color13:    #ff5050
+*color12:    #a7deff
+
+*color5:     #ff8350
+*color13:    #ff3300
+
 *color6:     #87aebb
-*color14:    #a7deff
+*color14:    #87ceeb
+
 *color7:     #bbbbbb
 *color15:    #ffffff
 !XDEFAULTS-THEME
