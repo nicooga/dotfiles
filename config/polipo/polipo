@@ -1,0 +1,26 @@
+# proxyAddress = "::0"        # both IPv4 and IPv6
+# proxyAddress = "0.0.0.0"    # IPv4 only
+# allowedClients = "127.0.0.1, 134.157.168.57"
+# allowedClients = "127.0.0.1, 134.157.168.0/24"
+
+chunkHighMark = 50331648
+objectHighMark = 16384
+
+localDocumentRoot = "~/.polipo-root"
+forbiddenUrl = http://127.0.0.1:8123/empty.gif
+diskCacheRoot = "~/.polipo-cache/"
+
+# Uncomment this if you want to enable the pages under /polipo/index?
+# and /polipo/servers?.  This is a serious privacy leak if your proxy
+# is shared.
+
+disableIndexing = false
+disableServersList = false
+
+dnsQueryIPv6 = no
+dnsQueryIPv6 = reluctantly
+
+# disableVia=false
+
+censoredHeaders = from, accept-language
+censorReferer = maybe
