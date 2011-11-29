@@ -49,9 +49,10 @@ bash_prompt() {
     local UC=$Y                 # user's color
     [ $UID -eq "0" ] && UC=$R   # root's color
 
-  # PS1="$TITLEBAR${Y}[${UC}\u${Y}@${Y}\h ${EMG}\$(__ruby_version) ${EMR}\${PWD}${Y}]${EMR}\$(__git_ps1)${W} ${FILES_INFO}\n▸ ${NONE}"
-  # PS1="$TITLEBAR${Y}${UC}\u${Y} ${EMG}\$(__ruby_version) ${EMR}\${PWD}${Y}${EMR}\$(__git_ps1)${W}\n▸ ${NONE}"
-    PS1="$TITLEBAR${Y}${UC}\u${Y} ${EMR}\w${Y}${EMR}\$(__git_ps1)\n${EMW}▸ ${NONE}"
+    local USER=""
+    [ $UID -eq "0" ] && USER="\u "
+
+    PS1="$TITLEBAR${Y}${UC}${USER}${Y}${EMR}\w${Y}${EMR}\$(__git_ps1)\n${EMW}▸ ${NONE}"
 }
 
 bash_prompt
