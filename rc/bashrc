@@ -38,11 +38,7 @@ alias xmv='escapepath | xargs -I {} mv {}'
 alias rhino='java -jar /usr/share/java/js.jar'
 alias srez="xrandr -s 0" # restore screen size to screen's best
 
-alias gtodos='google docs edit "TODO" --editor "gvim --nofork"'
-alias gideas='google docs edit "IDEAS" --editor "gvim --nofork"'
-alias gnotes='google docs edit "NOTES" --editor "gvim --nofork"'
-
-if [   -f /etc/bash_completion ];                          then source /etc/bash_completion ; fi
+if [ -f /etc/bash_completion ];                            then source /etc/bash_completion ; fi
 if [[ -s ~/dotfiles/completion/rake_and_cap.sh ]] ;        then source ~/dotfiles/completion/rake_and_cap.sh ; fi
 
 if [[ -s ~/dotfiles/bash/dirb.sh ]] ;                      then source ~/dotfiles/bash/dirb.sh ; fi
