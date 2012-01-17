@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+indent -kr -l100 -nut $1
+
+# vim: set ts=8 sw=2 tw=0 ft=sh :

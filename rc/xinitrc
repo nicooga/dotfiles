@@ -44,12 +44,7 @@ export AWT_TOOLKIT="MToolkit"
 # wmname preserves antialiasing while fixing the issue above.
 # ~/dotfiles/bin/wmname LG3D_WM
 
-# set wallpaper
-awsetbg ~/Wallpaper/green.jpg
-
 ptbatterysystemtray &
-
-ck-launch-session &
 
 # network on tray
 wicd-gtk &
@@ -57,4 +52,4 @@ wicd-gtk &
 # allow me to see shadows please.
 xgamma -gamma 0.85
 
-exec awesome
+exec ck-launch-session awesome

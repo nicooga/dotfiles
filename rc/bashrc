@@ -10,6 +10,14 @@ export LC_ALL="en_US.utf8"
 # export RUBYOPT='-w'
 export MANPAGER="most -c"
 
+if [ -d /opt/android-sdk/tools ] ;  then
+  PATH=/opt/android-sdk/tools:"${PATH}"
+fi
+
+if [ -d $ANDROID_NDK ] ; then
+  PATH=$PATH:$ANDROID_NDK/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin
+fi
+
 if [ -d ~/dotfiles/bin ] ;  then PATH=~/dotfiles/bin:"${PATH}" ; fi
 if [ -d ~/dotfiles/local/bin ] ;  then PATH=~/dotfiles/local/bin:"${PATH}" ; fi
 if [ -d ~/.rvm/bin ] ;      then PATH=~/.rvm/bin:"${PATH}" ; fi
@@ -23,7 +31,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 alias reload='source ~/.bashrc'
 alias cdgems='cd `gem env gemdir`/gems'
 alias bx="bundle exec"
-alias bxr="bundle exec rails"
 alias rake="rake --trace"
 alias ..="cd .."
 alias cd..="cd .."
