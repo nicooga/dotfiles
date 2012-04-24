@@ -6,7 +6,7 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 
 __ruby_version() {
   # echo `ruby -v | sed -e "s/ (.*//g"`
-  echo `rvm-prompt`
+  echo ""
 }
 
 bash_prompt() {
