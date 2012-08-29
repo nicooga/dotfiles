@@ -1,35 +1,32 @@
 // vim:nolist
 
-Xcursor.theme:	Obsidian
-
-Xft.antialias:	1
-Xft.hintstyle:	hintfull
-Xft.dpi:	96
-Xft.hinting:	1
-Xft.rgba:	rgb
-
-URxvt.keysym.C-Delete:	perl:matcher
-URxvt.keysym.M-u:	perl:mark-yank-urls:activate_mark_mode
-URxvt.matcher.pattern.1:\\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
-URxvt.matcher.pattern.2:\\B(/\\S+?):(\\d+)(?=:|$)
-URxvt.matcher.launcher.2:gvim --remote +$2 $1
-URxvt.matcher.button:	1
-URxvt.cursorColor:	green
-URxvt.boldFont:	        xft:Bitstream Vera Sans Mono:bold:pixelsize=14:antialias=true:hinting=true
-URxvt.urgentOnBell:	true
-URxvt.perl-ext:	        default,selection,mark-yank-urls,selection-popup,matcher,-option-popup
-URxvt.underlineURLs:	true
-URxvt.buffered:	true
-URxvt.underlineColor:	yellow
-URxvt.scrollBar:	0
-URxvt.urlLauncher:	/usr/bin/chromium
-URxvt.saveLines:	8192
-URxvt.font:     	xft:Bitstream Vera Sans Mono:pixelsize=14:antialias=true:hinting=true
-
-URxvt*transparent:      true
-URxvt*shading:          16
-// URxvt*tint:          colour
-URxvt*inheritPixmap:    true
+!font settings
+xscreensaver.Dialog.headingFont:        -*-dina-bold-r-*-*-10-*-*-*-*-*-*-*
+xscreensaver.Dialog.bodyFont:           -*-dina-medium-r-*-*-10-*-*-*-*-*-*-*
+xscreensaver.Dialog.labelFont:          -*-dina-medium-r-*-*-10-*-*-*-*-*-*-*
+xscreensaver.Dialog.unameFont:          -*-dina-medium-r-*-*-10-*-*-*-*-*-*-*
+xscreensaver.Dialog.buttonFont:         -*-dina-bold-r-*-*-10-*-*-*-*-*-*-*
+xscreensaver.Dialog.dateFont:           -*-dina-medium-r-*-*-10-*-*-*-*-*-*-*
+xscreensaver.passwd.passwdFont:         -*-dina-bold-r-*-*-10-*-*-*-*-*-*-*
+!general dialog box (affects main hostname, username, password text)
+xscreensaver.Dialog.foreground:         #EDEDED
+xscreensaver.Dialog.background:         #202020
+xscreensaver.Dialog.topShadowColor:     #202024
+xscreensaver.Dialog.bottomShadowColor:  #202024
+xscreensaver.Dialog.Button.foreground:  #EDEDFF
+xscreensaver.Dialog.Button.background:  #444
+!username/password input box and date text colour
+xscreensaver.Dialog.text.foreground:    #EDEDFF
+xscreensaver.Dialog.text.background:    #444
+xscreensaver.Dialog.internalBorderWidth:24
+xscreensaver.Dialog.borderWidth:        20
+xscreensaver.Dialog.shadowThickness:    2
+!timeout bar (background is actually determined by Dialog.text.background)
+xscreensaver.passwd.thermometer.foreground:  #A9B7C4
+xscreensaver.passwd.thermometer.background:  #202020
+xscreensaver.passwd.thermometer.width:       8
+!datestamp format--see the strftime(3) manual page for details
+xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
 
 xterm*scrollTtyOutput:	false
 xterm*multiScroll:	true
