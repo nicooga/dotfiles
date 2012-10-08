@@ -1,0 +1,7 @@
+#!/bin/bash
+
+guake -r "General"
+guake --new-tab="Tab 2" -r "Development" -s1 -e "cd ~/Projects"
+guake --new-tab="Tab 3" -r "Console" -s2 -e "cd ~/Projects"
+guake --new-tab="Tab 4" -r "Server" -s3 -e "cd ~/Projects"
+guake -s0 &

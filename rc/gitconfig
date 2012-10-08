@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /home/emmanuel/.gitignore
+	excludesfile = /home/cygnus/.gitignore
 	pager = most +s +'/---'
 	editor = gvim --nofork
 
@@ -26,15 +26,17 @@
 	addi = add -i
 
 [user]
-	name = Emmanuel Oga
-	email = EmmanuelOga@gmail.com
+	name = Nicolas Oga
+	email = 2112.oga@gmail.com
 
 [diff "ruby"]
 	funcname = ^ *\\(\\(class\\|module\\|def\\) .*\\)
 
 [github]
-	user = EmmanuelOga
+	user = NicolasOga
 	token = FILLUP
 
 [diff]
 	tool = meld
+[credential]
+	helper = cache --timeout=3600
