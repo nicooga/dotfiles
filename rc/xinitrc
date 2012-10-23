@@ -7,8 +7,8 @@
 xrdb .Xdefaults
 
 # keyboard config.
-setxkbmap -layout en
-xmodmap /home/emmanuel/.Xmodmap
+setxkbmap -layout es
+xmodmap /home/cygnus/.Xmodmap
 
 # disable touchpad when typing.
 syndaemon -d

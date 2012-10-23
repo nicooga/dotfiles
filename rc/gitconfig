@@ -15,7 +15,7 @@
 
 [alias]
 	up = pull origin
-	st = status -sb
+	st = status
 	di = diff
 	co = checkout
 	ci = commit
