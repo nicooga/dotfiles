@@ -46,13 +46,7 @@ bash_prompt() {
     local BGC="\[\033[46m\]"
     local BGW="\[\033[47m\]"
 
-    local UC=$Y                 # user's color
-    [ $UID -eq "0" ] && UC=$R   # root's color
-
-    local USER=""
-    [ $UID -eq "0" ] && USER="\u "
-
-    PS1="$TITLEBAR${Y}${UC}${USER}${Y}${EMR}\w${Y}${EMR}\$(__git_ps1)\n${EMW}▸ ${NONE}"
+    PS1="$TITLEBAR${B}${BGK}{${USERNAME}}${NONE} ${K}${EMB}\w${Y}${EMW}\$(__git_ps1)\n${NONE}${EMW}▸ ${NONE}"
 }
 
 bash_prompt

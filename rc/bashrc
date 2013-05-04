@@ -1,6 +1,8 @@
 export RUBYOPT='-w'
 export MANPAGER="most -c"
 
+source ~/.git-prompt.sh
+
 if [ -d ~/dotfiles/bin ] ;  then PATH=~/dotfiles/bin:"${PATH}" ; fi
 if [ -d ~/dotfiles/local/bin ] ;  then PATH=~/dotfiles/local/bin:"${PATH}" ; fi
 if [ -d ~/.rvm/bin ] ;      then PATH=~/.rvm/bin:"${PATH}" ; fi
