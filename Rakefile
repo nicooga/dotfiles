@@ -25,7 +25,7 @@ desc "list existing dotfiles files"
 task :list do
   list = sources_and_destinations.map { |src, dst| [file_compare(src, dst), dst] }
   just = list.map { |_, path| path.length }.max + 1
-  list.sort.each { |item| puts("" << NO_COL << item.last.ljust(just) << item.first) }
+  list.sort.each { |item| puts("" << NO_COL << item.last.ljust(just) << item.first << NO_COL) }
 end
 
 desc "remove old dotfiles files"

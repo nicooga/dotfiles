@@ -1,50 +1,11 @@
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# vim:ft=sh
-
-export INPUTRC=~/.inputrc # make sure the local input rc is loaded
-set -o vi                 # and, set readline to vi mode
-
-TZ='America/Argentina/Buenos_Aires'; export TZ
-export LANG="en_EN.utf8"
-export LC_ALL="en_US.utf8"
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-# export RUBYOPT='-w'
+export RUBYOPT='-w'
 export MANPAGER="most -c"
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-if [ -d /opt/android-sdk/tools ] ;  then
-  PATH=/opt/android-sdk/tools:"${PATH}"
-fi
-
-if [ -d $ANDROID_NDK ] ; then
-  PATH=$PATH:$ANDROID_NDK/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin
-fi
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
 if [ -d ~/dotfiles/bin ] ;  then PATH=~/dotfiles/bin:"${PATH}" ; fi
 if [ -d ~/dotfiles/local/bin ] ;  then PATH=~/dotfiles/local/bin:"${PATH}" ; fi
 if [ -d ~/.rvm/bin ] ;      then PATH=~/.rvm/bin:"${PATH}" ; fi
-if [ -d ~/.luarocks/bin ] ; then PATH=~/.luarocks/bin:"${PATH}" ; fi
-if [ -d /usr/lib/perl5/vendor_perl/bin/ ] ; then PATH=/usr/lib/perl5/vendor_perl/bin/:"${PATH}" ; fi
 
-export PATH=$PATH:/usr/lib/postgresql/9.1/bin/
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/bin/dirname
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 alias reload='source ~/.bashrc'
 alias cdgems='cd `gem env gemdir`/gems'
@@ -59,16 +20,12 @@ alias ls='ls --group-directories-first --time-style=+"%Y-%m-%d %H:%M" --color=au
 alias exes='find -type f -executable'
 alias grep='grep --color=tty -d skip'
 alias ifind='ack -a -f | grep -i'
-alias xmv='escapepath | xargs -I {} mv {}'
 alias rhino='java -jar /usr/share/java/js.jar'
-alias srez="xrandr -s 0" # restore screen size to screen's best
-alias ai="sudo aptitude install"
-alias as="apt-cache search"
-alias ar="sudo aptitude remove"
+alias yi='sudo yum install'
+alias ys='yum search'
 
 if [ -f /etc/bash_completion ];                            then source /etc/bash_completion ; fi
 if [[ -s ~/dotfiles/completion/rake_and_cap.sh ]] ;        then source ~/dotfiles/completion/rake_and_cap.sh ; fi
-
 if [[ -s ~/dotfiles/bash/dirb.sh ]] ;                      then source ~/dotfiles/bash/dirb.sh ; fi
 if [[ -s ~/dotfiles/bash/bash_prompt.sh ]] ;               then source ~/dotfiles/bash/bash_prompt.sh ; fi
 
@@ -78,24 +35,6 @@ alias rc="sudo rc.d"
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-
 # rvm
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 if [[ -r $rvm_path/scripts/completion ]] ; then source $rvm_path/scripts/completion ; fi
-
-# go
-if [[ -r /etc/profile.d/go.sh ]] ; then
-  source /etc/profile.d/go.sh ;
-  export PATH=$PATH:/opt/go/bin
-fi
-
-# ant
-if [[ -r /usr/share/java/apache-ant/bin ]] ; then
-  export PATH=$PATH:/usr/share/java/apache-ant/bin
-fi
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
