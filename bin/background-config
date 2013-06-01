@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+require 'nokogiri'
+require 'awesome_print'
+require 'pry'
+
+# Take all wallpapers from ~/Pictures/Wallpaper and make a hash out of them 
+wallpapers = Dir[File.expand_path('~/Pictures/Wallpaper/*')].map do |w|
+  /^.+\/(?<category>[^-]+)-\d{3}-(?<name>.+)\..+$/ =~ w
+  {
+    filename: File.join('/usr/share/backgrounds/gnome/', w[/\/[^\/]+$/]),
+    name: "#{category.capitalize}::#{name.gsub('-', '').capitalize}"
+  }
+end
+
+# Generate gnome-backgrounds.xml file
+File.open(File.expand_path('~/gnome-backgrounds.xml'), 'w') do |file|
+  file.write(
+    Nokogiri::XML::Builder.new(encoding: 'UTF-8') do |xml|
+      xml.wallpapers do
+        wallpapers.each do |w|
+          xml.wallpaper(deleted: false) do
+            xml.name w[:name]
+            xml.name w[:name], 'xml:lang' => 'en_GB'
+            xml.filename_ w[:filename]
+            xml.options 'zoom'
+            xml.pcolor '#ffffff'
+            xml.scolor '#000000'
+          end
+        end
+      end
+    end.to_xml.gsub(/<\?xml version="1.0" encoding="UTF-8"\?>/) do |s|
+      s += %Q|\n<!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">|
+    end
+  )
+end
