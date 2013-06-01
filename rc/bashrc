@@ -24,6 +24,7 @@ alias ifind='ack -a -f | grep -i'
 alias rhino='java -jar /usr/share/java/js.jar'
 alias yi='sudo yum install'
 alias ys='yum search'
+alias z='zeus'
 
 if [ -f /etc/bash_completion ];                            then source /etc/bash_completion ; fi
 if [[ -s ~/dotfiles/completion/rake_and_cap.sh ]] ;        then source ~/dotfiles/completion/rake_and_cap.sh ; fi
