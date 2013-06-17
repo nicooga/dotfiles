@@ -1,4 +1,6 @@
-#!/bin/sh
+/!/bin/sh
+# Mount sda3
+mount /dev/sda3 /media/Windows
 
 # Turn off bell sound
 /usr/bin/env xset b off
@@ -7,7 +9,7 @@
 xrdb .Xdefaults
 
 # keyboard config.
-setxkbmap -layout es
+setxkbmap -layout latam
 xmodmap /home/cygnus/.Xmodmap
 
 # disable touchpad when typing.
@@ -35,21 +37,24 @@ fi
 # popup gnome keyring dialog asking for credentials when needed.
 eval `gnome-keyring-daemon`
 
-# password manager
-fpm2 -t &
-
 # Some java application do not get focus or have strange behaviours under no standard Window Managers like Awesome.
 export AWT_TOOLKIT="MToolkit"
 
 # wmname preserves antialiasing while fixing the issue above.
 # ~/dotfiles/bin/wmname LG3D_WM
 
-ptbatterysystemtray &
+# ptbatterysystemtray &
 
 # network on tray
+batti &
+wicd &
 wicd-gtk &
+alsa-tray &
+guake &
 
 # allow me to see shadows please.
 xgamma -gamma 0.85
 
-exec ck-launch-session awesome
+skype &
+
+exec awesome

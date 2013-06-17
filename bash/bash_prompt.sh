@@ -5,15 +5,10 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM="auto"
 
 __ruby_version() {
-  # echo `ruby -v | sed -e "s/ (.*//g"`
-  echo ""
+  ruby -v | sed -e "s/ (.*//g"
 }
 
 bash_prompt() {
-    local FILES_INFO="(\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files, \$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //'))"
-
-    local TITLEBAR="\[\033]0;\u:\w \$(__ruby_version) ${FILES_INFO} \007\]"
-
     local NONE="\[\033[0m\]"    # unsets color to term's fg color
 
     # regular colors
@@ -46,13 +41,12 @@ bash_prompt() {
     local BGC="\[\033[46m\]"
     local BGW="\[\033[47m\]"
 
-    local UC=$Y                 # user's color
-    [ $UID -eq "0" ] && UC=$R   # root's color
+    local UC=$EMB               # user's color
+    [ $UID -eq "0" ] && UC=$EMR   # root's color
 
-    local USER=""
-    [ $UID -eq "0" ] && USER="\u "
+    [ $UID -eq "0" ] && USER="\u"
 
-    PS1="$TITLEBAR${Y}${UC}${USER}${Y}${EMR}\w${Y}${EMR}\$(__git_ps1)\n${EMW}▸ ${NONE}"
+    PS1="${UC}${BGK}| ${USER} |${NONE} ${Y}${UC}\w${Y}${UC}${EMW}\$(__git_ps1)\n> ${NONE}"
 }
 
 bash_prompt

@@ -2,14 +2,19 @@
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
+source ~/.git-prompt.sh
+export EDITOR='subl -n'
+
+[ -n "$XTERM_VERSION" ] && transset-df -a >/dev/null
+
 # vim:ft=sh
 
 export INPUTRC=~/.inputrc # make sure the local input rc is loaded
 set -o vi                 # and, set readline to vi mode
 
 TZ='America/Argentina/Buenos_Aires'; export TZ
-export LANG="en_EN.utf8"
-export LC_ALL="en_US.utf8"
+# export LANG="en_EN.utf8"
+# export LC_ALL="en_US.utf8"
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -62,9 +67,7 @@ alias ifind='ack -a -f | grep -i'
 alias xmv='escapepath | xargs -I {} mv {}'
 alias rhino='java -jar /usr/share/java/js.jar'
 alias srez="xrandr -s 0" # restore screen size to screen's best
-alias ai="sudo aptitude install"
-alias as="apt-cache search"
-alias ar="sudo aptitude remove"
+alias pi="sudo pacman -S"
 
 if [ -f /etc/bash_completion ];                            then source /etc/bash_completion ; fi
 if [[ -s ~/dotfiles/completion/rake_and_cap.sh ]] ;        then source ~/dotfiles/completion/rake_and_cap.sh ; fi
@@ -99,3 +102,5 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
