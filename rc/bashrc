@@ -43,6 +43,7 @@ if [ -d ~/dotfiles/local/bin ] ;  then PATH=~/dotfiles/local/bin:"${PATH}" ; fi
 if [ -d ~/.rvm/bin ] ;      then PATH=~/.rvm/bin:"${PATH}" ; fi
 if [ -d ~/.luarocks/bin ] ; then PATH=~/.luarocks/bin:"${PATH}" ; fi
 if [ -d /usr/lib/perl5/vendor_perl/bin/ ] ; then PATH=/usr/lib/perl5/vendor_perl/bin/:"${PATH}" ; fi
+[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
 
 export PATH=$PATH:/usr/lib/postgresql/9.1/bin/
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/bin/dirname
