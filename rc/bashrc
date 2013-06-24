@@ -5,6 +5,12 @@ source ~/.git-prompt.sh
 if [ -d ~/dotfiles/bin ] ;  then PATH=~/dotfiles/bin:"${PATH}" ; fi
 if [ -d ~/dotfiles/local/bin ] ;  then PATH=~/dotfiles/local/bin:"${PATH}" ; fi
 if [ -d ~/.rvm/bin ] ;      then PATH=~/.rvm/bin:"${PATH}" ; fi
+<<<<<<< HEAD
+=======
+if [ -d ~/.luarocks/bin ] ; then PATH=~/.luarocks/bin:"${PATH}" ; fi
+if [ -d /usr/lib/perl5/vendor_perl/bin/ ] ; then PATH=/usr/lib/perl5/vendor_perl/bin/:"${PATH}" ; fi
+[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+>>>>>>> some changes
 
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/bin/dirname
 
