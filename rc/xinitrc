@@ -1,0 +1,52 @@
+/!/bin/sh
+# Mount sda3
+mount /dev/sda3 /media/Windows
+
+# Turn off bell sound
+/usr/bin/env xset b off
+
+# make sure resources are loaded.
+xrdb .Xdefaults
+
+# keyboard config.
+setxkbmap -layout latam
+xmodmap /home/cygnus/.Xmodmap
+
+# disable touchpad when typing.
+syndaemon -d
+
+# intelligent input bus (chinese)
+# ibus-daemon &
+# export GTK_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+# export QT_IM_MODULE=ibus
+
+# Allow transparency
+# xcompmgr &
+
+# Start the GnuPG agent and enable OpenSSH agent emulation
+gnupginf="${HOME}/.gnupg/gpg-agent.info"
+
+if ( pgrep -u "${USER}" gpg-agent ); then
+  eval `cat $gnupginf`
+  eval `cut -d= -f1 $gnupginf | xargs echo export`
+else
+  eval `gpg-agent --enable-ssh-support --daemon`
+fi
+
+# popup gnome keyring dialog asking for credentials when needed.
+eval `gnome-keyring-daemon`
+
+# Some java application do not get focus or have strange behaviours under no standard Window Managers like Awesome.
+export AWT_TOOLKIT="MToolkit"
+
+# wmname preserves antialiasing while fixing the issue above.
+# ~/dotfiles/bin/wmname LG3D_WM
+
+# allow me to see shadows please.
+xgamma -gamma 0.85
+
+# start xscreensaver
+/usr/bin/xscreensaver -no-splash &
+
+exec awesome
