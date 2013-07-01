@@ -2,15 +2,12 @@
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-source ~/.git-prompt.sh
+
 export EDITOR='subl -n'
 
 [ -n "$XTERM_VERSION" ] && transset-df -a >/dev/null
 
 # vim:ft=sh
-
-export INPUTRC=~/.inputrc # make sure the local input rc is loaded
-set -o vi                 # and, set readline to vi mode
 
 TZ='America/Argentina/Buenos_Aires'; export TZ
 # export LANG="en_EN.utf8"
@@ -38,10 +35,11 @@ shopt -s checkwinsize
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
-if [ -d ~/dotfiles/bin ] ;  then PATH=~/dotfiles/bin:"${PATH}" ; fi
-if [ -d ~/dotfiles/local/bin ] ;  then PATH=~/dotfiles/local/bin:"${PATH}" ; fi
-if [ -d ~/.rvm/bin ] ;      then PATH=~/.rvm/bin:"${PATH}" ; fi
-if [ -d ~/.luarocks/bin ] ; then PATH=~/.luarocks/bin:"${PATH}" ; fi
+if [ -d ~/.config/awesome/widgets ] ; then PATH=~/.config/awesome/widgets:"${PATH}" ; fi
+if [ -d ~/dotfiles/bin ] ;            then PATH=~/dotfiles/bin:"${PATH}"            ; fi
+if [ -d ~/dotfiles/local/bin ] ;      then PATH=~/dotfiles/local/bin:"${PATH}"      ; fi
+if [ -d ~/.rvm/bin ] ;                then PATH=~/.rvm/bin:"${PATH}"                ; fi
+if [ -d ~/.luarocks/bin ] ;           then PATH=~/.luarocks/bin:"${PATH}"           ; fi
 if [ -d /usr/lib/perl5/vendor_perl/bin/ ] ; then PATH=/usr/lib/perl5/vendor_perl/bin/:"${PATH}" ; fi
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
 
@@ -69,12 +67,13 @@ alias xmv='escapepath | xargs -I {} mv {}'
 alias rhino='java -jar /usr/share/java/js.jar'
 alias srez="xrandr -s 0" # restore screen size to screen's best
 alias pi="sudo pacman -S"
+alias z="zeus"
 
-if [ -f /etc/bash_completion ];                            then source /etc/bash_completion ; fi
-if [[ -s ~/dotfiles/completion/rake_and_cap.sh ]] ;        then source ~/dotfiles/completion/rake_and_cap.sh ; fi
-
-if [[ -s ~/dotfiles/bash/dirb.sh ]] ;                      then source ~/dotfiles/bash/dirb.sh ; fi
-if [[ -s ~/dotfiles/bash/bash_prompt.sh ]] ;               then source ~/dotfiles/bash/bash_prompt.sh ; fi
+if [ -f /etc/bash_completion ];                    then source /etc/bash_completion ; fi
+if [[ -s ~/dotfiles/completion/rake_and_cap.sh ]]; then source ~/dotfiles/completion/rake_and_cap.sh ; fi
+if [ -f ~/dotfiles/bash/git-prompt.sh ];          then source ~/dotfiles/bash/git-prompt.sh ; fi
+if [[ -s ~/dotfiles/bash/dirb.sh ]] ;              then source ~/dotfiles/bash/dirb.sh ; fi
+if [[ -s ~/dotfiles/bash/bash_prompt.sh ]] ;       then source ~/dotfiles/bash/bash_prompt.sh ; fi
 
 alias rc="sudo rc.d"
 

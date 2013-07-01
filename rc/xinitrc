@@ -43,18 +43,10 @@ export AWT_TOOLKIT="MToolkit"
 # wmname preserves antialiasing while fixing the issue above.
 # ~/dotfiles/bin/wmname LG3D_WM
 
-# ptbatterysystemtray &
-
-# network on tray
-batti &
-wicd &
-wicd-gtk &
-alsa-tray &
-guake &
-
 # allow me to see shadows please.
 xgamma -gamma 0.85
 
-skype &
+# start xscreensaver
+/usr/bin/xscreensaver -no-splash &
 
 exec awesome

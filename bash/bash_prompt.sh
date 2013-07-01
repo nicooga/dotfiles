@@ -42,11 +42,11 @@ bash_prompt() {
     local BGW="\[\033[47m\]"
 
     local UC=$EMB               # user's color
-    [ $UID -eq "0" ] && UC=$EMR   # root's color
+    [ $UID -eq "0" ] && UC=$EMR # root's color
 
     [ $UID -eq "0" ] && USER="\u"
 
-    PS1="${UC}${BGK}| ${USER} |${NONE} ${Y}${UC}\w${Y}${UC}${EMW}\$(__git_ps1)\n> ${NONE}"
+    PS1="${UC}${BGK}| ${USER} |${NONE} ${Y}${UC}\w${Y}${UC}${EMW}\$(__git_ps1)\n${NONE}${EMW}> ${NONE}"
 }
 
 bash_prompt
