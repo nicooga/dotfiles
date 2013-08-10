@@ -46,7 +46,7 @@ bash_prompt() {
 
     [ $UID -eq "0" ] && USER="\u"
 
-    PS1="${UC}${BGK}| ${USER} |${NONE} ${Y}${UC}\w${Y}${UC}${EMW}\$(__git_ps1)\n${NONE}${EMW}> ${NONE}"
+    PS1="${UC}${BGK}| ${USER} |${NONE} ${Y}${UC}\w${Y}${UC}${EMW}\$(__git_ps1)\n${NONE}${EMW}▸ ${NONE}"
 }
 
 bash_prompt

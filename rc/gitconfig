@@ -42,3 +42,5 @@
 	helper = cache --timeout=3600
 [push]
 	default = simple
+[giggle]
+	main-window-view = HistoryView
