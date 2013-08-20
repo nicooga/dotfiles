@@ -41,6 +41,6 @@
 [credential]
 	helper = cache --timeout=3600
 [push]
-	default = simple
+	default = current
 [giggle]
 	main-window-view = HistoryView
