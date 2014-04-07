@@ -1,7 +1,7 @@
 [core]
 	excludesfile = /home/cygnus/.gitignore
 	pager = most +s +'/---'
-	editor = sublime
+	editor = vim
 
 [color]
 	diff = auto

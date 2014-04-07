@@ -18,7 +18,7 @@ def file_compare(src, dst)
     "#{GREEN}[Installed]"
   else
     "#{RED}[Not Installed]"
-  end
+  end + NO_COL
 end
 
 desc "list existing dotfiles files"
