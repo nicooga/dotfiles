@@ -42,3 +42,5 @@
 	helper = cache --timeout=3600
 [giggle]
 	main-window-view = HistoryView
+[push]
+	deafult = matching
