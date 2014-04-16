@@ -35,3 +35,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # rvm
 if [[ -s ~/.rvm/scripts/rvm ]] ;           then source ~/.rvm/scripts/rvm           ; fi
 if [[ -r $rvm_path/scripts/completion ]] ; then source $rvm_path/scripts/completion ; fi
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
